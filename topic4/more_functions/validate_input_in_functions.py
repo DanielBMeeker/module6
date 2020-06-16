@@ -7,9 +7,13 @@ def score_input(test_name, test_score=0, invalid_message='Invalid test score, tr
     :return: a string following the format 'test_name: test_score'
     """
     if not str(test_score).isnumeric():
-        return invalid_message
+        raise ValueError(invalid_message)
     if float(test_score) < 0:
-        return invalid_message
+        raise ValueError(invalid_message)
     elif float(test_score) > 100:
-        return invalid_message
+        raise ValueError(invalid_message)
     return test_name + ': ' + str(test_score)
+
+
+if __name__ == '__main__':
+    print(score_input('Python'))
