@@ -21,6 +21,10 @@ class MyTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             vf.score_input('Python', 'Ten')
 
+    def test_score_input_invalid_message(self):
+        with self.assertRaises(ValueError):
+            vf.score_input('Python', '110', 'Score too high')
+
 
 if __name__ == '__main__':
     unittest.main()
