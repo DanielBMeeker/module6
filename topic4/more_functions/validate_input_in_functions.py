@@ -6,4 +6,7 @@ def score_input(test_name, test_score=0, invalid_message='Invalid test score, tr
     :param invalid_message: Optional - has a default message that is returned if the score is invalid
     :return: a string following the format 'test_name: test_score'
     """
+
+    if float(test_score) < 0:
+        return invalid_message
     return test_name + ': ' + str(test_score)
