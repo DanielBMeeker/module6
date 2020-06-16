@@ -6,6 +6,7 @@ def score_input(test_name, test_score=0, invalid_message='Invalid test score, tr
     :param invalid_message: Optional - has a default message that is returned if the score is invalid
     :return: a string following the format 'test_name: test_score'
     """
+    
     if not str(test_score).isnumeric():
         raise ValueError(invalid_message)
     if float(test_score) < 0:
@@ -16,4 +17,8 @@ def score_input(test_name, test_score=0, invalid_message='Invalid test score, tr
 
 
 if __name__ == '__main__':
-    print(score_input('Python'))
+    try:
+        test = input('Please enter a score for a test')
+        print(score_input('Python', test))
+    except ValueError as ex:
+        print(ex)
