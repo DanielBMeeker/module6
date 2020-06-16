@@ -9,4 +9,6 @@ def score_input(test_name, test_score=0, invalid_message='Invalid test score, tr
 
     if float(test_score) < 0:
         return invalid_message
+    elif float(test_score) > 100:
+        return invalid_message
     return test_name + ': ' + str(test_score)
